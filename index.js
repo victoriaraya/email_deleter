@@ -16,16 +16,46 @@ const addresses = [
   "Rain",
   "ADT Security Services",
   "Farmers Insurance",
+  "Hiring Manager",
+  "Liberty Mutual Quote",
+  "National Debt Relief",
+  "Class Action Claims",
+  "AHS Warranty",
+  "CarShield Partner",
+  "Fast Quotes Coverage",
+  "ObamaCare Health",
+  "Vivint.SmartHome Security",
+  "VIVINT Premier Partner",
+  "Medicare Advantage Plans",
+  "Gutter Guard Offer",
+  "FidelityLife Insurance",
+  "Globe Life Details",
+  "Aflac",
 ];
 
-const buildOrConditions = (addresses) => {
-  if (addresses.length === 1) {
-    return ["FROM", addresses[0]];
+let pendingOperations = 0;
+
+const checkEndConnection = () => {
+  if (pendingOperations === 0) {
+    imap.end();
   }
-  return ["OR", ["FROM", addresses[0]], buildOrConditions(addresses.slice(1))];
 };
 
-const searchCriteria = buildOrConditions(addresses);
+const dynamicSearchAndDelete = (addresses) => {
+  for (let i = 0; i < addresses.length; i += 2) {
+    let conditions;
+    if (i + 1 < addresses.length) {
+      conditions = [
+        "UNSEEN",
+        ["OR", ["FROM", addresses[i]], ["FROM", addresses[i + 1]]],
+      ];
+    } else {
+      conditions = ["UNSEEN", ["FROM", addresses[i]]];
+    }
+    pendingOperations++;
+    imapSearchAndDelete(conditions);
+  }
+};
 
 const imap = new Imap({
   user: process.env.ATT_USERNAME,
@@ -35,32 +65,130 @@ const imap = new Imap({
   tls: true,
 });
 
-imap.once("error", console.error);
-imap.once("ready", () => {
-  imap.openBox("Inbox", false, (err, box) => {
-    if (err) throw error;
+const imapSearchAndDelete = (searchCriteria) => {
+  imap.search(searchCriteria, (err, results) => {
+    if (err) {
+      console.error("Search error:", err);
+      pendingOperations--;
+      checkEndConnection();
+      return;
+    }
 
-    imap.search(["UNSEEN", searchCriteria], (error, results) => {
-      if (error) throw error;
+    console.log(`Unseen message IDs: ${results}`);
+    console.log(`Unseen message count: ${results.length}`);
+    console.log("Search results:", results);
 
-      if (results.length === 0) {
-        console.log("No unread emails from the specified addresses.");
-        imap.end();
-        return;
-      }
+    if (results.length === 0) {
+      console.log("No unread emails from the specified addresses.");
+      pendingOperations--;
+      checkEndConnection();
+      return;
+    }
 
-      imap.addFlags(results, "\\Deleted", (err) => {
-        if (err) throw err;
+    const fetch = imap.fetch(results, { bodies: "" });
 
-        imap.expunge((err) => {
-          if (err) throw err;
+    fetch.on("message", (msg, seqno) => {
+      console.log(`Fetched message #${seqno}`);
 
-          console.log("Deleted all specified messages.");
-          imap.end();
+      msg.once("attributes", (attrs) => {
+        let uid = attrs.uid;
+        imap.addFlags(uid, ["\\Deleted"], (err) => {
+          if (err) {
+            console.error("Add Flags error:", err);
+            pendingOperations--;
+            checkEndConnection();
+            return;
+          }
+
+          imap.expunge((err) => {
+            if (err) {
+              console.error("Expunge error:", err);
+              pendingOperations--;
+              checkEndConnection();
+              return;
+            }
+
+            console.log("Deleted all specified messages.");
+            pendingOperations--;
+            checkEndConnection();
+          });
         });
+      });
+
+      fetch.once("end", () => {
+        console.log("Done fetching all messages.");
+      });
+
+      fetch.once("error", (err) => {
+        console.error(`Fetch error: ${err}`);
+        pendingOperations--;
+        checkEndConnection();
       });
     });
   });
+};
+
+imap.once("error", (err) => {
+  console.error("Connection error:", err);
+});
+
+imap.once("ready", () => {
+  imap.openBox("Inbox", false, (err, box) => {
+    if (err) {
+      console.error("Open box error:", err);
+      return;
+    }
+
+    dynamicSearchAndDelete(addresses);
+  });
+});
+
+imap.once("end", () => {
+  console.log("Connection ended");
 });
 
 imap.connect();
+
+// imap.once("ready", () => {
+//     imap.openBox("Inbox", false, (err, box) => {
+//       if (err) throw err;
+
+//   imap.search(fullSearchCriteria, (err, results) => {
+//     if (err) throw err;
+
+//     console.log(`Unseen message IDs: ${results}`);
+//     console.log(`Unseen message count: ${results.length}`);
+//     console.log("Search results:", results);
+
+//     if (results.length === 0) {
+//       console.log("No unread emails from the specified addresses.");
+//       imap.end();
+//       return;
+//     }
+
+//     const fetch = imap.fetch(results, { bodies: "" });
+
+//     fetch.on("message", (msg, seqno) => {
+//       console.log(`Fetched message #${seqno}`);
+
+//       msg.once("attributes", (attrs) => {
+//         let uid = attrs.uid;
+//         imap.addFlags(uid, ["\\Deleted"], (err) => {
+//           if (err) throw err;
+
+//           imap.expunge((err) => {
+//             if (err) throw err;
+
+//             console.log("Deleted all specified messages.");
+//             imap.end();
+//           });
+//         });
+//       });
+
+//       fetch.once("error", (err) => {
+//         console.error(`Fetch error: ${err}`);
+//       });
+//     });
+//       });
+//     }); //
+//   });
