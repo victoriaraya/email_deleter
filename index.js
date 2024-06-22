@@ -15,6 +15,7 @@ const addresses = [
   "Renewal By Andersen",
   "Rain",
   "ADT Security Services",
+  "ADT",
   "Farmers Insurance",
   "Hiring Manager",
   "Liberty Mutual Quote",
@@ -29,8 +30,11 @@ const addresses = [
   "Medicare Advantage Plans",
   "Gutter Guard Offer",
   "FidelityLife Insurance",
+  "FidelityLife Quote",
   "Globe Life Details",
   "Aflac",
+  "Join Today!",
+  "ParkMobile",
 ];
 
 let pendingOperations = 0;
@@ -74,8 +78,6 @@ const imapSearchAndDelete = (searchCriteria) => {
       return;
     }
 
-    console.log(`Unseen message IDs: ${results}`);
-    console.log(`Unseen message count: ${results.length}`);
     console.log("Search results:", results);
 
     if (results.length === 0) {
