@@ -35,6 +35,11 @@ const addresses = [
   "Aflac",
   "Join Today!",
   "ParkMobile",
+  "Recipe Reader",
+  "Blue Sky Auto Insurance",
+  "American home warranty Plans",
+  "Globe Life Insurance Alert",
+  "American Home Shield Network",
 ];
 
 let pendingOperations = 0;
