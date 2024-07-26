@@ -40,6 +40,19 @@ const addresses = [
   "American home warranty Plans",
   "Globe Life Insurance Alert",
   "American Home Shield Network",
+  "Rent to Own Properties",
+  "Oil Change Deals",
+  "Command Cooking",
+  "pch sweepstakes",
+  "RbA Replacements",
+  "Budget Blinds",
+  "LibertyMutualQuoteTeam",
+  "Check Your Credit",
+  "Heartland Cooking",
+  "Bankruptcy Options",
+  "Sell.My.House.Fast",
+  "LibertyUniversity",
+  "Metal Roofing Innovations Promotions",
 ];
 
 let pendingOperations = 0;

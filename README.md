@@ -37,10 +37,10 @@ Adjust the addresses array to include the senders you wish to delete emails from
 
 ### Set up cron job
 
-To ensure proper permissions (for Mac), you may have to add Terminal and cron to Full Disk Access in System Preferences (through Security & Privacy). In this example, the script will be run everyday at 10 am.
+To ensure proper permissions (for Mac), you may have to add Terminal and cron to Full Disk Access in System Preferences (through Security & Privacy). In this example, the script will be run everyday at 10 am and 2 pm.
 
     crontab -e
-    0 10 * * * <path-to-app>/run_email_app.sh
+    0 10,14 * * * <path-to-app>/run_email_app.sh
 
 ## Contributing
 
