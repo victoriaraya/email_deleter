@@ -53,6 +53,8 @@ const addresses = [
   "Sell.My.House.Fast",
   "LibertyUniversity",
   "Metal Roofing Innovations Promotions",
+  "USInsuranceOnline",
+  "Fidelity.Life.Coverage",
 ];
 
 let pendingOperations = 0;

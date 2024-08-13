@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a node script I wrote utilizing node-imap to delete emails from specific senders through IMAP. This was inspired by the many spam emails I receive a day from questionable senders, emails that I did not want to open and click any links from. Setting up a cronjob to run this script once a day has freed me from the annoying task of manually deleting 20+ emails everyday.
+This is a node script I wrote utilizing node-imap to delete emails from specific senders through IMAP. This was inspired by the many spam emails I receive a day from questionable senders, emails that I did not want to open and click any links from. Setting up a cronjob to run this script twice a day has freed me from the annoying task of manually deleting 20+ emails everyday.
 
 In building this project I learnt alot about IMAP, properly managing async tasks, and setting up a cron job considering env variables and permissions successfully.
 
@@ -32,6 +32,8 @@ Adjust the addresses array to include the senders you wish to delete emails from
     const addresses = [ 'sender-1-here', 'sender-2-here', ]
 
 ### Run the app
+
+In your terminal run:
 
     <path-to-app>/run_email_app.sh
 
