@@ -55,6 +55,16 @@ const addresses = [
   "Metal Roofing Innovations Promotions",
   "USInsuranceOnline",
   "Fidelity.Life.Coverage",
+  "Miracle-made-sheets",
+  "American express",
+  "A Place for Mom Partner",
+  "Oil Change Coupons",
+  "GlobeLife - Offer",
+  "Insurance Savings Deals",
+  "Canvas Prints Promotion",
+  "Wells Fargo Online",
+  "Walmart Customer Experience",
+  "CVS Opinion Requested",
 ];
 
 let pendingOperations = 0;
