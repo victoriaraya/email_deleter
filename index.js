@@ -65,6 +65,10 @@ const addresses = [
   "Wells Fargo Online",
   "Walmart Customer Experience",
   "CVS Opinion Requested",
+  "Word Zapp",
+  "Auto:Insurance:Comparisons",
+  "DISH TV Retailer",
+  "MedicareComparisonShop",
 ];
 
 let pendingOperations = 0;
