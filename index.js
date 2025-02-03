@@ -69,6 +69,8 @@ const addresses = [
   "Auto:Insurance:Comparisons",
   "DISH TV Retailer",
   "MedicareComparisonShop",
+  "Auto Insurance Comparisons",
+  "Big Sky Credit Offer",
 ];
 
 let pendingOperations = 0;
