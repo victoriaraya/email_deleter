@@ -71,6 +71,7 @@ const addresses = [
   "MedicareComparisonShop",
   "Auto Insurance Comparisons",
   "Big Sky Credit Offer",
+  "HEXI Los Angeles",
 ];
 
 let pendingOperations = 0;
