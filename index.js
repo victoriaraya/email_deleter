@@ -73,7 +73,8 @@ const addresses = [
   "Big Sky Credit Offer",
   "HEXI Los Angeles",
   "Your Car Insurance",
-  "M.O.W."
+  "M.O.W.",
+  "LawsuitHelps Offer",
 ];
 
 let pendingOperations = 0;
