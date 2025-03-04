@@ -75,6 +75,8 @@ const addresses = [
   "Your Car Insurance",
   "M.O.W.",
   "LawsuitHelps Offer",
+  "Bloomingdale's The Outlet Stores",
+  "Compare"
 ];
 
 let pendingOperations = 0;
