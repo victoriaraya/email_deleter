@@ -77,7 +77,8 @@ const addresses = [
   "LawsuitHelps Offer",
   "Bloomingdale's The Outlet Stores",
   "Compare",
-  "Auto Quote Reduction."
+  "Auto Quote Reduction.",
+  "TruGreen Limited Time Sale"
 ];
 
 let pendingOperations = 0;
