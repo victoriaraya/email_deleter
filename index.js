@@ -80,7 +80,8 @@ const addresses = [
   "Auto Quote Reduction.",
   "TruGreen Limited Time Sale",
   "Compare .com Car Coverage",
-  "Vivint Deal"
+  "Vivint Deal",
+  "LeafFilter Promo"
 ];
 
 let pendingOperations = 0;
