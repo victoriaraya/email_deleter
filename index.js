@@ -84,7 +84,8 @@ const addresses = [
   "LeafFilter Promo",
   "ADT Peace of Mind",
   "My Loan Companion",
-  "Debt Relief Team"
+  "Debt Relief Team",
+  "Vivint Home Security"
 ];
 
 let pendingOperations = 0;
