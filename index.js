@@ -85,7 +85,8 @@ const addresses = [
   "ADT Peace of Mind",
   "My Loan Companion",
   "Debt Relief Team",
-  "Vivint Home Security"
+  "Vivint Home Security",
+  "BrinksHomeOffer Info"
 ];
 
 let pendingOperations = 0;
