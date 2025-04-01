@@ -87,7 +87,8 @@ const addresses = [
   "Debt Relief Team",
   "Vivint Home Security",
   "BrinksHomeOffer Info",
-  "Liberty_Mutual_Insurance"
+  "Liberty_Mutual_Insurance",
+  "myLoanAlly"
 ];
 
 let pendingOperations = 0;
