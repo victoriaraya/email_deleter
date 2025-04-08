@@ -90,7 +90,8 @@ const addresses = [
   "Liberty_Mutual_Insurance",
   "myLoanAlly",
   "National Debt Relief Service",
-  "TruGreen Lawn Care Professionals"
+  "TruGreen Lawn Care Professionals",
+  "Insurify"
 ];
 
 let pendingOperations = 0;
