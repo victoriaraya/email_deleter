@@ -93,7 +93,8 @@ const addresses = [
   "TruGreen Lawn Care Professionals",
   "Insurify",
   "Records Trivia",
-  "Explain It Daily"
+  "Explain It Daily",
+  "Need To Know Facts"
 ];
 
 let pendingOperations = 0;
