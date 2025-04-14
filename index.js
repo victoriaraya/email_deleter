@@ -94,7 +94,8 @@ const addresses = [
   "Insurify",
   "Records Trivia",
   "Explain It Daily",
-  "Need To Know Facts"
+  "Need To Know Facts",
+  "Words Trivia"
 ];
 
 let pendingOperations = 0;
