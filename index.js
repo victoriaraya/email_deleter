@@ -96,7 +96,8 @@ const addresses = [
   "Explain It Daily",
   "Need To Know Facts",
   "Words Trivia",
-  "Iron Chef AI"
+  "Iron Chef AI",
+  "AEG Presents LA"
 ];
 
 let pendingOperations = 0;
