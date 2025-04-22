@@ -98,7 +98,8 @@ const addresses = [
   "Words Trivia",
   "Iron Chef AI",
   "AEG Presents LA",
-  "INTERNATIONAL MONETARY FUND"
+  "INTERNATIONAL MONETARY FUND",
+  "Truthfully"
 ];
 
 let pendingOperations = 0;
