@@ -100,6 +100,7 @@ const addresses = [
   "AEG Presents LA",
   "INTERNATIONAL MONETARY FUND",
   "Truthfully",
+  "Ella"
 ];
 
 let pendingOperations = 0;
