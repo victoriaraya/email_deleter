@@ -101,7 +101,7 @@ const addresses = [
   "INTERNATIONAL MONETARY FUND",
   "Truthfully",
   "Ella",
-  "Matchacha",
+  "Matchacha"
 ];
 
 let pendingOperations = 0;
