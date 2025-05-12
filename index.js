@@ -103,7 +103,8 @@ const addresses = [
   "Ella",
   "Matchacha",
   "Breck's",
-  "Good News Instead"
+  "Good News Instead",
+  "Credit Card Promotion"
 ];
 
 let pendingOperations = 0;
