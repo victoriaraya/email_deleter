@@ -105,7 +105,7 @@ const addresses = [
   "Breck's",
   "Good News Instead",
   "Credit Card Promotion",
-  "Endurance Warranty Services"
+  "Endurance Warranty Services",
 ];
 
 let pendingOperations = 0;
