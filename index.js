@@ -108,7 +108,7 @@ const addresses = [
   "Endurance Warranty Services",
   "3 Day Blinds",
   "The University of Edinburgh",
-  "Window Experts"
+  "Window Experts",
 ];
 
 let pendingOperations = 0;
