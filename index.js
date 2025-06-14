@@ -109,7 +109,8 @@ const addresses = [
   "3 Day Blinds",
   "The University of Edinburgh",
   "Window Experts",
-  "TurboTax Monthly"
+  "TurboTax Monthly",
+  "Consumer Cellular Plans"
 ];
 
 let pendingOperations = 0;
