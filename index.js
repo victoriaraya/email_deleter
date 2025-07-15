@@ -111,7 +111,8 @@ const addresses = [
   "Window Experts",
   "TurboTax Monthly",
   "Consumer Cellular Plans",
-  "DoorDash" 
+  "DoorDash",
+  "NDR Financial Freedom"
 ];
 
 let pendingOperations = 0;
