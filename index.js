@@ -113,7 +113,8 @@ const addresses = [
   "Consumer Cellular Plans",
   "DoorDash",
   "NDR Financial Freedom",
-  "What's In AI"
+  "What's In AI",
+  "Bold Fact"
 ];
 
 let pendingOperations = 0;
