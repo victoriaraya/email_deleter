@@ -115,7 +115,8 @@ const addresses = [
   "NDR Financial Freedom",
   "What's In AI",
   "Bold Fact",
-  "Petspiration"
+  "Petspiration",
+  "A Healthy Living"
 ];
 
 let pendingOperations = 0;
